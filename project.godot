@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Bad ideas GJ 2026"
+run/main_scene="uid://bpfg4053vmxo5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Settings="*uid://bqyvb013ya7le"
 
 [dotnet]
 
