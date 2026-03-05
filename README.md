@@ -2,7 +2,6 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Level spawn point
 - Jump down
 - Make a couple levels actually
 - Level loading
