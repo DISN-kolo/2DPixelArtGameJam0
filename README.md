@@ -19,3 +19,6 @@ Maybe it's gonna be useful to make it as a scene that's only accissble from the 
 
 # Some specs
 - Jump height allows for jumping just over 3 tiles
+
+# misc notes
+- maybe the exit area node thing would work with exporting a collision shape instead of a shape
