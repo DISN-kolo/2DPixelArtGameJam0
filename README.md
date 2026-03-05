@@ -2,6 +2,8 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
+- Level spawn point
+- Jump down
 - Make a couple levels actually
 - Level loading
 - Level loading needs to happen due to moving between levels: thus, level exist and entries
@@ -13,3 +15,6 @@ Maybe it's gonna be useful to make it as a scene that's only accissble from the 
 - Various tilesets (because background/foreground matters)
 - Character animations
 - Intro act (big goal!)
+
+# Some specs
+- Jump height allows for jumping just over 3 tiles

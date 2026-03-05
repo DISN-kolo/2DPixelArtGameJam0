@@ -1,92 +1,14 @@
-[gd_scene format=4 uid="uid://bpfg4053vmxo5"]
+[gd_scene format=3 uid="uid://bpfg4053vmxo5"]
 
-[ext_resource type="Script" uid="uid://d3qpp07s44sqr" path="res://Character/player.gd" id="1_hptm8"]
-[ext_resource type="Texture2D" uid="uid://ct5bnb1lg0s2g" path="res://icon.svg" id="2_d1ilt"]
-[ext_resource type="Script" uid="uid://c3wjrq2ctwhpc" path="res://Camera/camera_control.gd" id="3_6iyac"]
-[ext_resource type="Script" uid="uid://cwj80640uokef" path="res://StateMachine/controllers.gd" id="4_fdnlq"]
-[ext_resource type="Script" uid="uid://cr45m77ftqvky" path="res://Scenes/state_machine.gd" id="5_jkdf5"]
-[ext_resource type="Script" uid="uid://dslw7odmigb3p" path="res://StateMachine/idle.gd" id="6_wsu2k"]
-[ext_resource type="Script" uid="uid://cwgplj2ag30b2" path="res://StateMachine/walk.gd" id="7_k12tt"]
-[ext_resource type="Script" uid="uid://c1r22winn0mns" path="res://StateMachine/jump.gd" id="8_h1bgf"]
-[ext_resource type="Script" uid="uid://bmlaq088u6jb2" path="res://StateMachine/fall.gd" id="9_b3802"]
-[ext_resource type="Script" uid="uid://o454qw6x4p82" path="res://StateMachine/pre_fall.gd" id="10_d1ilt"]
-[ext_resource type="TileSet" uid="uid://dxhsmdj620aia" path="res://Tilesets/base_tile_set.tres" id="10_fevyy"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_761m8"]
-size = Vector2(64, 64)
+[ext_resource type="PackedScene" uid="uid://b4418cmklroiv" path="res://Scenes/pc.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://d054hlguj5vtf" path="res://Scenes/level_0.tscn" id="11_d1ilt"]
 
 [node name="Main" type="Node" unique_id=1493251341]
 
-[node name="PC" type="CharacterBody2D" parent="." unique_id=150304337]
-position = Vector2(175, 220)
-script = ExtResource("1_hptm8")
+[node name="Level_0" parent="." unique_id=1990827985 instance=ExtResource("11_d1ilt")]
 
-[node name="PCCam" type="Camera2D" parent="PC" unique_id=1153940151]
-script = ExtResource("3_6iyac")
-
-[node name="PCCollider" type="CollisionShape2D" parent="PC" unique_id=1518304918]
-shape = SubResource("RectangleShape2D_761m8")
-
-[node name="PCSprite" type="Sprite2D" parent="PC" unique_id=1024464747]
-position = Vector2(1.9073486e-06, 1.9073486e-06)
-scale = Vector2(0.49999997, 0.49999997)
-texture = ExtResource("2_d1ilt")
-
-[node name="Controllers" type="Node" parent="PC" unique_id=1408116349]
-script = ExtResource("4_fdnlq")
-
-[node name="StateMachine" type="Node" parent="PC/Controllers" unique_id=366451442 node_paths=PackedStringArray("starting_state")]
-script = ExtResource("5_jkdf5")
-starting_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="PC/Controllers/StateMachine" unique_id=252941580 node_paths=PackedStringArray("controllers", "pre_fall_state", "jump_state", "walk_state")]
-script = ExtResource("6_wsu2k")
-controllers = NodePath("../..")
-pre_fall_state = NodePath("../PreFall")
-jump_state = NodePath("../Jump")
-walk_state = NodePath("../Walk")
-
-[node name="Walk" type="Node" parent="PC/Controllers/StateMachine" unique_id=640373514 node_paths=PackedStringArray("controllers", "pre_fall_state", "jump_state", "idle_state")]
-script = ExtResource("7_k12tt")
-controllers = NodePath("../..")
-pre_fall_state = NodePath("../PreFall")
-jump_state = NodePath("../Jump")
-idle_state = NodePath("../Idle")
-
-[node name="Jump" type="Node" parent="PC/Controllers/StateMachine" unique_id=1504678344 node_paths=PackedStringArray("controllers", "fall_state", "walk_state", "idle_state")]
-script = ExtResource("8_h1bgf")
-controllers = NodePath("../..")
-fall_state = NodePath("../Fall")
-walk_state = NodePath("../Walk")
-idle_state = NodePath("../Idle")
-
-[node name="Fall" type="Node" parent="PC/Controllers/StateMachine" unique_id=770040480 node_paths=PackedStringArray("controllers", "walk_state", "idle_state")]
-script = ExtResource("9_b3802")
-controllers = NodePath("../..")
-walk_state = NodePath("../Walk")
-idle_state = NodePath("../Idle")
-
-[node name="PreFall" type="Node" parent="PC/Controllers/StateMachine" unique_id=1321552872 node_paths=PackedStringArray("controllers", "jump_state", "idle_state", "walk_state", "fall_state")]
-script = ExtResource("10_d1ilt")
-controllers = NodePath("../..")
-jump_state = NodePath("../Jump")
-idle_state = NodePath("../Idle")
-walk_state = NodePath("../Walk")
-fall_state = NodePath("../Fall")
-
-[node name="PreFallTimer" type="Timer" parent="PC/Controllers" unique_id=1449133920]
-unique_name_in_owner = true
-process_callback = 0
-wait_time = 0.05
-one_shot = true
-
-[node name="TileControl" type="Node2D" parent="." unique_id=1334410635]
-position = Vector2(-1387, 5)
-scale = Vector2(4, 4)
-
-[node name="BaseTiles" type="TileMapLayer" parent="TileControl" unique_id=1021186084]
-tile_map_data = PackedByteArray("AAAHAAYAAAADAAAACQAIAAcAAAACAAAABAAIAAgAAAABAAMAAAAJAAgAAAAEAAAAAwAJAAkAAAABAAMAAAAKAAkAAAAEAAAAAwAKAAoAAAABAAMAAAALAAoAAAADAAAAAQAMAAoAAAADAAAAAQANAAoAAAAFAAIAAgANAAsAAAABAAIAAgAOAAsAAAAEAAAAAQAPAAwAAAABAAEAAAAQAAwAAAAEAAAAAAARAA0AAAAEAAAAAAASAA4AAAADAAAACAATAA4AAAACAAIABAAUAA8AAAACAAIAAAAVAA8AAAAFAAIAAAAWABAAAAADAAAAAQAXABAAAAADAAAAAQAYABEAAAABAAIAAwAZABEAAAADAAQAAAAaABEAAAACAAMAAAAbABIAAAADAAMAAAAcABIAAAADAAIAAAAdABIAAAAEAAIAAAAeABMAAAAEAAMAAAAfABMAAAADAAQAAAAgABMAAAAFAAMAAAAXAAoAAAACAAIAAQAWAAsAAAADAAAAAAAWAAwAAAADAAEAAAAVAAwAAAACAAEAAQAVAA0AAAABAAIAAAAUAA4AAAADAAAAAAATAA8AAAADAAEAAAATABAAAAAEAAMAAAASABEAAAADAAMAAAARABIAAAADAAQAAgAQABMAAAADAAAACQAPABQAAAADAAAACQAOABUAAAAEAAAAAQANABUAAAABAAIAAgAMABYAAAACAAAAAAALABcAAAADAAAACAAKABcAAAACAAAAAQASAAcAAAADAAAABQASAAgAAAACAAIAAQASAAkAAAACAAIAAQASAAoAAAACAAIAAQASAAsAAAACAAIAAQATAA0AAAACAAIAAQASAAwAAAABAAMAAAATABEAAAAFAAIAAAAUABMAAAABAAIAAQATABIAAAADAAQAAwAUABUAAAABAAIAAAAUABQAAAABAAIAAAAUABYAAAABAAIAAAAUABcAAAABAAIAAAAUABgAAAACAAEAAQAUABkAAAABAAIAAAAXAAgAAAADAAAABQAXAAkAAAACAAIAAQAXAAsAAAAFAAIAAQAYAAwAAAAEAAAAAAAYAA4AAAACAAIAAQAYAA0AAAAFAAIAAwAYABAAAAACAAEAAgAYAA8AAAACAAIAAQAZABMAAAADAAAACAAYABIAAAACAAIAAQAZABUAAAABAAIAAAAZABQAAAABAAIAAAAZABYAAAABAAIAAAAZABcAAAACAAEAAwAZABgAAAACAAIAAQAcAAgAAAADAAAABQAcAAkAAAACAAIAAQAcAAoAAAACAAIAAQAcAAsAAAACAAIAAQAdAA0AAAADAAAABQAcAAwAAAACAAIAAQAdABAAAAACAAIAAQAdAA8AAAAFAAIAAgAdAA4AAAACAAIAAQAdABEAAAACAAIABAAdABQAAAAEAAMAAAAdABMAAAACAAIAAAAdABYAAAAEAAEAAAAdABUAAAAFAAIAAAAdABcAAAACAAMAAAAdABgAAAACAAQAAAAMABsAAAABAAIAAAAMABoAAAABAAIAAAANABkAAAAFAAIAAAANABgAAAAEAAEAAQANABYAAAAFAAIAAQANABcAAAAFAAIAAAANABIAAAAEAAEAAgANABMAAAACAAIAAQANABQAAAACAAIAAQANABAAAAAEAAEAAQANABEAAAAFAAIAAAANAA4AAAACAAIAAQANAA8AAAAFAAIAAQANAAwAAAAFAAIAAQANAA0AAAAFAAIAAwANAAkAAAADAAAABQAMABwAAAABAAMAAAANABwAAAAEAAQAAAANABsAAAAFAAIAAAANABoAAAAFAAIAAAAMAA0AAAABAAMAAAAMAAwAAAABAAEAAAAKABMAAAACAAAAAQALABMAAAAFAAIAAgALABIAAAACAAAAAwAMABIAAAADAAQAAgAOABIAAAADAAAAAQAQABIAAAADAAAAAQAPABIAAAADAAAAAQASABIAAAADAAQAAAAUABIAAAAEAAAAAwAVABMAAAADAAAABwAXABMAAAADAAAAAQAWABMAAAADAAAAAQAYABMAAAADAAQAAQAaABIAAAABAAIAAAAeABIAAAAEAAEAAAAfABIAAAADAAAAAAAgABIAAAADAAAABwAhABIAAAADAAAAAQAiABIAAAAEAAAAAQALABkAAAABAAMAAAAMABkAAAACAAMAAAAOABgAAAADAAAAAQAPABgAAAADAAAAAQARABgAAAADAAAAAQAQABgAAAADAAAAAQASABgAAAADAAAAAQATABgAAAADAAAAAQAWABgAAAADAAAAAQAVABgAAAAEAAEAAQAXABgAAAAEAAAAAQAYABcAAAACAAAAAQAaABcAAAADAAQAAwAbABcAAAADAAAAAQAcABcAAAADAAQAAgAeABcAAAADAAIAAAAfABcAAAAFAAIAAAAgABYAAAADAAAAAQAhABYAAAADAAAAAQAiABYAAAADAAAAAQAjABYAAAADAAAAAQAkABYAAAAEAAAAAQAVABQAAAAFAAIAAAAVABUAAAAFAAIAAAAVABYAAAAFAAIAAAAVABcAAAAFAAIAAAAVABkAAAAFAAIAAAAVABoAAAAFAAIAAAAVABsAAAAFAAIAAAAVABwAAAAFAAIAAAAVAB0AAAAFAAIAAwAaABYAAAAFAAIAAAAaABQAAAAFAAIAAAAaABMAAAACAAEAAwAaABUAAAAFAAIAAAARABAAAAADAAAACAAQAA8AAAAFAAIAAAAPAA4AAAABAAIAAAAMAA8AAAACAAAAAAAMABAAAAABAAIAAAAMABEAAAABAAIAAAAOABAAAAADAAAAAQAPABAAAAADAAQAAgAPAA8AAAABAAIAAAAQAA4AAAAEAAMAAAARABEAAAABAAIAAAARAA4AAAADAAQAAwASAA8AAAABAAIAAAAQAA0AAAAEAAEAAAAPAA0AAAABAAIAAAAQABAAAAADAAQAAwASABAAAAACAAEAAAAUABAAAAADAAQAAAAWAA4AAAAEAAQAAAAXAA0AAAADAAQAAAAVAAsAAAABAAEAAAAUAAwAAAADAAAAAQATAAwAAAADAAAAAgAVABAAAAADAAQAAwAXAAwAAAAEAAEAAAAWAA0AAAAEAAMAAAAVAA4AAAACAAEAAwAZABAAAAADAAAAAAAaABAAAAADAAAAAAAbABAAAAAFAAEAAAAcAA8AAAACAAAAAQAbABEAAAAEAAEAAAAbABMAAAADAAQAAAAcABQAAAABAAIAAAAeABQAAAAEAAQAAAAeABEAAAAFAAEAAAAcABEAAAADAAAAAAAcABMAAAACAAMAAAAcABUAAAABAAIAAAAcABYAAAABAAIAAAAeABgAAAADAAQAAAAeABYAAAADAAAAAAAfABYAAAAEAAEAAwAfABUAAAADAAAABQAfABgAAAAFAAMAAAAMABgAAAADAAIAAAAMABcAAAACAAEAAAALABgAAAABAAIAAAAUABoAAAABAAIAAAAUABsAAAABAAIAAAAUABwAAAABAAIAAAAUAB0AAAACAAQAAAA=")
-tile_set = ExtResource("10_fevyy")
+[node name="PC" parent="." unique_id=2129211798 instance=ExtResource("2_bo1nx")]
+position = Vector2(-63, -177)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1227579412]
 
@@ -110,5 +32,3 @@ layout_mode = 0
 offset_top = 41.0
 offset_right = 40.0
 offset_bottom = 64.0
-
-[connection signal="timeout" from="PC/Controllers/PreFallTimer" to="PC/Controllers/StateMachine/PreFall" method="_on_pre_fall_timer_timeout"]
