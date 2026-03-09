@@ -2,6 +2,7 @@ extends State
 
 @export var controllers: Node
 
+@export var jump_state: State
 @export var walk_state: State
 @export var idle_state: State
 
@@ -38,6 +39,8 @@ func process_physics(delta: float) -> State:
 	actor.move_and_slide();
 	
 	if actor.is_on_floor():
+		if (Input.is_action_pressed("jump") and !controllers.crouched):
+			return jump_state;
 		if abs(input_dir) > 0.1:
 			return walk_state;
 		return idle_state;

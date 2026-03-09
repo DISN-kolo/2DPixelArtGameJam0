@@ -59,9 +59,10 @@ fall_state = NodePath("../Fall")
 walk_state = NodePath("../Walk")
 idle_state = NodePath("../Idle")
 
-[node name="Fall" type="Node" parent="Controllers/StateMachine" unique_id=853542558 node_paths=PackedStringArray("controllers", "walk_state", "idle_state")]
+[node name="Fall" type="Node" parent="Controllers/StateMachine" unique_id=853542558 node_paths=PackedStringArray("controllers", "jump_state", "walk_state", "idle_state")]
 script = ExtResource("9_sh1m4")
 controllers = NodePath("../..")
+jump_state = NodePath("../Jump")
 walk_state = NodePath("../Walk")
 idle_state = NodePath("../Idle")
 

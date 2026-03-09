@@ -9,15 +9,6 @@ extends State
 func enter() -> void:
 	super();
 
-func process_input(event: InputEvent) -> State:
-	if Input.is_action_pressed("jump"):
-		if controllers.crouched:
-			controllers.lose_drop_collision();
-			return pre_fall_state;
-		else:
-			return jump_state;
-	return null
-
 func process_physics(delta: float) -> State:
 	if (abs(Input.get_vector("mov_left", "mov_right",
 		"mov_up", "mov_down").x) >= 0.01):
