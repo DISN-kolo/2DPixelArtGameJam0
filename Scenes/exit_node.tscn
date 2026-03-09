@@ -3,7 +3,13 @@
 [ext_resource type="Script" uid="uid://c5vo2w6y76ea8" path="res://Scenes/exit_node.gd" id="1_rt7ac"]
 
 [node name="Exit0" type="Area2D" unique_id=332839608]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_rt7ac")
+exit_id = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1310476195]
+[node name="ExitAreaShape" type="CollisionShape2D" parent="." unique_id=1310476195]
+unique_name_in_owner = true
 position = Vector2(-3, -14)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

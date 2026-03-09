@@ -3,15 +3,17 @@
 [ext_resource type="Script" uid="uid://bnnm60r5clxse" path="res://Scenes/level_0.gd" id="1_8ryqv"]
 [ext_resource type="TileSet" uid="uid://dxhsmdj620aia" path="res://Tilesets/base_tile_set.tres" id="1_m0b12"]
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="3_31js7"]
+[ext_resource type="Script" uid="uid://8e1d30qnwefs" path="res://Scenes/exit_areas.gd" id="3_pspvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31js7"]
-resource_local_to_scene = true
+size = Vector2(128, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pspvu"]
-resource_local_to_scene = true
+size = Vector2(256, 256)
 
 [node name="Level_0" type="Node2D" unique_id=1990827985]
 script = ExtResource("1_8ryqv")
+level_id = 5
 
 [node name="TileControl" type="Node2D" parent="." unique_id=1290145722]
 scale = Vector2(4, 4)
@@ -21,17 +23,29 @@ tile_map_data = PackedByteArray("AAAJAAUAAAAFAAMAAAAJAAQAAAAFAAIAAAAJAAMAAAAEAAA
 tile_set = ExtResource("1_m0b12")
 
 [node name="ExitAreas" type="Node2D" parent="." unique_id=958580726]
+unique_name_in_owner = true
+script = ExtResource("3_pspvu")
 
 [node name="Exit0" parent="ExitAreas" unique_id=332839608 instance=ExtResource("3_31js7")]
 position = Vector2(-1405, 110)
-the_shape = SubResource("RectangleShape2D_31js7")
+exit_id = 0
+
+[node name="ExitAreaShape" parent="ExitAreas/Exit0" index="0" unique_id=1310476195]
+shape = SubResource("RectangleShape2D_31js7")
 
 [node name="Exit1" parent="ExitAreas" unique_id=2017730433 instance=ExtResource("3_31js7")]
 position = Vector2(1266, -835)
-the_shape = SubResource("RectangleShape2D_pspvu")
+exit_id = 1
+
+[node name="ExitAreaShape" parent="ExitAreas/Exit1" index="0" unique_id=1310476195]
+position = Vector2(14, 3)
+shape = SubResource("RectangleShape2D_pspvu")
 
 [node name="SpawnMarkers" type="Node2D" parent="." unique_id=1679915875]
 
 [node name="DefaultSpawn" type="Marker2D" parent="SpawnMarkers" unique_id=777578760]
 position = Vector2(-330, 32)
 gizmo_extents = 289.7
+
+[editable path="ExitAreas/Exit0"]
+[editable path="ExitAreas/Exit1"]

@@ -20,12 +20,12 @@ func process_physics(delta: float) -> State:
 		actor.velocity.y += Settings.gravity;
 	actor.move_and_slide();
 	
-	if Input.is_action_pressed("jump"):
-		if controllers.crouched:
+	if (Input.is_action_pressed("jump")):
+		if (controllers.crouched):
 			controllers.lose_drop_collision();
 			return pre_fall_state;
 		else:
 			return jump_state;
-	if !actor.is_on_floor():
+	if (!actor.is_on_floor()):
 		return pre_fall_state;
 	return null;

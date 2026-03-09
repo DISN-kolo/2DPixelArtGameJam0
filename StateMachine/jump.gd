@@ -32,10 +32,8 @@ func process_physics(delta: float) -> State:
 		actor.velocity.y += Settings.gravity;
 	actor.move_and_slide();
 	
-	if !actor.is_on_floor() and actor.velocity.y < 0:
+	if (!actor.is_on_floor()):
 		return fall_state;
-	if actor.is_on_floor():
-		if abs(input_dir) > 0.1:
-			return walk_state;
-		return idle_state;
-	return null;
+	if (abs(input_dir) > 0.1):
+		return walk_state;
+	return idle_state;

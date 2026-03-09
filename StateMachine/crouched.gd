@@ -10,5 +10,6 @@ func enter() -> void:
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_just_released("crouch"):
+		controllers.gain_drop_collision();
 		return uncrouched_state;
 	return null

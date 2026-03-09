@@ -16,8 +16,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761m8"]
 size = Vector2(64, 64)
 
-[node name="PC" type="CharacterBody2D" unique_id=2129211798]
-collision_layer = 0
+[node name="PC" type="CharacterBody2D" unique_id=2129211798 groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_r32be")
 
 [node name="PCCam" type="Camera2D" parent="." unique_id=787769754]

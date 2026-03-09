@@ -18,10 +18,16 @@ config/icon="res://icon.svg"
 [autoload]
 
 Settings="*uid://bqyvb013ya7le"
+Signals="*uid://byw7ybd5k7isl"
+SceneSwitching="*uid://cuunkkctn8168"
 
 [dotnet]
 
 project/assembly_name="2d pixel art game jam 0"
+
+[global_group]
+
+player=""
 
 [input]
 

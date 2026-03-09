@@ -12,12 +12,12 @@ func enter() -> void:
 var input_dir: float = 0.0;
 
 func process_input(event: InputEvent) -> State:
-	if Input.is_action_pressed("jump"):
+	if (Input.is_action_pressed("jump")):
 		if controllers.crouched:
 			controllers.lose_drop_collision();
-	else:
+	if (Input.is_action_just_released("jump")):
 		controllers.gain_drop_collision();
-	return null
+	return null;
 
 func process_physics(delta: float) -> State:
 	input_dir = controllers.input_dir_normalizer(
@@ -41,7 +41,7 @@ func process_physics(delta: float) -> State:
 	if actor.is_on_floor():
 		if (Input.is_action_pressed("jump") and !controllers.crouched):
 			return jump_state;
-		if abs(input_dir) > 0.1:
+		if (abs(input_dir) > 0.1):
 			return walk_state;
 		return idle_state;
 	return null;
