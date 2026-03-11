@@ -2,12 +2,8 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Make a couple levels actually
-- Level loading
-- Level loading needs to happen due to moving between levels: thus, level exist and entries
-- Levels need to be positioned somehow. Level graph is required.
-Maybe it's gonna be useful to make it as a scene that's only accissble from the editor, in order to position levels n stuff.
 - Metroidvania mechanics such as picking up an item
+- Killzones!
 - Saves :)
 - multilayer tileset:
     - background stuff (? maybe do a painting and that's it?)
@@ -22,3 +18,8 @@ Maybe it's gonna be useful to make it as a scene that's only accissble from the 
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape
+
+# TODOs that'd be too out of scope for this, but fun to think about
+- Levels need to be positioned somehow. Level graph is required.
+Maybe it's gonna be useful to make it as a scene that's only accissble from the editor, in order to position levels n stuff.
+Furthermore, this sounds like a plan for a tool creation!
