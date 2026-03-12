@@ -2,7 +2,8 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- fixing the tileset collisions being all wonky
+- Three types of tilesets: one for colliding one-way, one for walls/ceilings/whatever hard colliding, one for decorative walls
+- Fix weid bug with an accidental wallslide when you fall through with croiuching while against the wall. cause wtf?
 - proper backgrounds?..
 - Saves :)
 - multilayer tileset:
