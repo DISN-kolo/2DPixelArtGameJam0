@@ -2,11 +2,11 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Fix weid bug with an accidental wallslide when you fall through with croiuching while against the wall. cause wtf?
-- proper backgrounds?..
+- Fix weid bug with an accidental wallslide when you fall through with crouching while against the wall. it thinks it's on floor?..
 - Saves :)
 	- Completed rooms, accessible rooms, inaccessible barriers in rooms...
 - Character animations
+- Tile art, background art
 - Intro act (big goal!)
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
 
