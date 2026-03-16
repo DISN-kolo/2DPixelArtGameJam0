@@ -2,15 +2,10 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Three types of tilesets: one for colliding one-way, one for walls/ceilings/whatever hard colliding, one for decorative walls
 - Fix weid bug with an accidental wallslide when you fall through with croiuching while against the wall. cause wtf?
 - proper backgrounds?..
 - Saves :)
-- multilayer tileset:
-	- background stuff (? maybe do a painting and that's it?)
-	- foreground uninteractible decor elements (?)
-- Completed rooms, accessible rooms, inaccessible barriers in rooms...
-- Various tilesets (because background/foreground matters)
+	- Completed rooms, accessible rooms, inaccessible barriers in rooms...
 - Character animations
 - Intro act (big goal!)
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
@@ -21,6 +16,7 @@ https://itch.io/jam/2d-pixel-art-game-jam
 - Levels from base level, connectable by exit nodes and spawn nodes (please do match the ids in the names) (quite intuitive, really)
 - Primitive killzone + respawn implementation. Uses a "frame buffer" that is prety wacky but works.
 - Camera border setting by two handles from the base level
+- Multilayer tilesets to support one-way and normal collisions at once.
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape
