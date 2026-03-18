@@ -33,6 +33,7 @@ func custom_is_on_floor() -> bool:
 			if overlapper.is_in_group("all_walls_floors"):
 				if (upper_list.has(overlapper)):
 					had_both = true;
+					break ;
 		if (had_both):
 			return false;
 		return true;
