@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var level_id: int = 0;
+@export var cam_zoom: float = 0.8;
 @onready var disappearing_dude_ps : PackedScene = preload("res://PickUp/disappearing_pu.tscn");
 var disappearing_dude : Node2D;
 

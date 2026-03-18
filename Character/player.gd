@@ -22,6 +22,14 @@ var imperfect_framebased_pos_buffer: Array[Vector2] = [];
 
 var lagging_speed_len : float = 0;
 
+var look_dir : int = 0;
+var cam_rel_tgt : Vector2 = Vector2(0, 0);
+var cam_throw_spd : float = 1;
+var cam_throw_spd_mod : float = 0.5;
+var cam_rel_mod : float = 50;
+var cam_margin_vel : float = 10;
+var cam_margin_vel_slowdown : float = 100;
+
 func custom_is_on_floor() -> bool:
 	if ($CustomFloorCollider.has_overlapping_bodies()):
 		if (!$CustomAntiFloorCollider.has_overlapping_bodies()):
@@ -62,12 +70,35 @@ func update_ifpb() -> void:
 	imperfect_framebased_pos_buffer.pop_front();
 	imperfect_framebased_pos_buffer.append(position);
 
+func calc_look_dir() -> void:
+	var current_margin : float = 0;
+	if (look_dir == 0):
+		current_margin = cam_margin_vel;
+	else:
+		current_margin = cam_margin_vel_slowdown;
+	if (velocity.x > current_margin):
+		look_dir = 1;
+	elif (velocity.x < -current_margin):
+		look_dir = -1;
+	else:
+		look_dir = 0;
+
+func offset_the_cam(delta: float) -> void:
+	cam_rel_tgt = Vector2(look_dir*cam_rel_mod, 0);
+	if (look_dir == 0):
+		$PCCam.position = lerp($PCCam.position, cam_rel_tgt, delta*cam_throw_spd*cam_throw_spd_mod);
+	else:
+		$PCCam.position = lerp($PCCam.position, cam_rel_tgt, delta*cam_throw_spd);
+
 func _physics_process(delta: float) -> void:
 	state_machine.process_physics(delta);
 	crouch_machine.process_physics(delta);
 	if (is_on_floor()):
 		update_ifpb();
 		PlayerMetrics.last_global_pos = imperfect_framebased_pos_buffer[0];
+
+	#calc_look_dir();
+	#offset_the_cam(delta);
 
 	if (Settings.debugmode):
 		label_misc.text = "";
@@ -103,3 +134,6 @@ func set_cam_limits(limits: Vector4i) -> void:
 	$PCCam.limit_top = limits[1];
 	$PCCam.limit_right = limits[2];
 	$PCCam.limit_bottom = limits[3];
+
+func set_cam_zoom(zoom: float) -> void:
+	$PCCam.zoom = Vector2(zoom, zoom);

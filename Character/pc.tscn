@@ -29,7 +29,6 @@ floor_max_angle = 0.0
 script = ExtResource("1_r32be")
 
 [node name="PCCam" type="Camera2D" parent="." unique_id=787769754]
-zoom = Vector2(0.6, 0.6)
 script = ExtResource("2_rbtku")
 
 [node name="PCSprite" type="Sprite2D" parent="." unique_id=968438969]

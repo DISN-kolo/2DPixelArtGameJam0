@@ -4,7 +4,7 @@
 
 [node name="Main" type="Node" unique_id=1493251341]
 script = ExtResource("1_8gbba")
-default_level_path = "uid://dhb45iir3nrtd"
+default_level_path = "uid://dk5i6k0dau54p"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1227579412]
 

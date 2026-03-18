@@ -22,6 +22,7 @@ func load_player(spawn_number: int) -> void:
 	pc.label_jump_held = %LabelJumpHeld;
 	pc.position = loaded_level.get_spawn_loc(spawn_number);
 	pc.set_cam_limits(loaded_level.get_cam_limits());
+	pc.set_cam_zoom(loaded_level.cam_zoom);
 	PlayerMetrics.last_global_pos = pc.position;
 	add_child(pc);
 

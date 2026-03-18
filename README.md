@@ -2,7 +2,6 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Fix weid bug with an accidental wallslide when you fall through with crouching while against the wall. it thinks it's on floor?..
 - Saves :)
 	- Completed rooms, accessible rooms, inaccessible barriers in rooms...
 - Character animations
@@ -17,6 +16,8 @@ https://itch.io/jam/2d-pixel-art-game-jam
 - Primitive killzone + respawn implementation. Uses a "frame buffer" that is prety wacky but works.
 - Camera border setting by two handles from the base level
 - Multilayer tilesets to support one-way and normal collisions at once.
+- Fixed a weird bug with an accidental wallslide when you fall through with crouching while against the wall. This is maybe not a very good fix. This bug seems to be engine-side.
+- camera inertia and lookahea. but it's commented out.
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape

@@ -19,8 +19,8 @@ size = Vector2(158, 158)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jv26f"]
 
-[node name="Level1" unique_id=1990827985 instance=ExtResource("1_tlcug")]
-level_id = 1
+[node name="Level1001" unique_id=1990827985 instance=ExtResource("1_tlcug")]
+level_id = 1001
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=51135822]
 modulate = Color(1, 0.5451854, 0.65667415, 1)
@@ -42,7 +42,7 @@ tile_map_data = PackedByteArray("AADs/wIAAAADAAQAAADs/wEAAAABAAUAAADs/wAAAAABAAE
 
 [node name="Exit0" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="0" unique_id=332839608 instance=ExtResource("2_4dpyx")]
 position = Vector2(-1312, 96)
-level_id_to_exit_to = 0
+level_id_to_exit_to = 1000
 spawn_id_to_exit_to = 2
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit0" index="0" unique_id=1310476195]
@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_iixi8")
 [node name="Exit1" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="1" unique_id=1457789894 instance=ExtResource("2_4dpyx")]
 position = Vector2(3552, 928)
 exit_id = 1
-level_id_to_exit_to = 0
+level_id_to_exit_to = 1000
 spawn_id_to_exit_to = 1
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit1" index="0" unique_id=1310476195]
@@ -60,7 +60,7 @@ shape = SubResource("RectangleShape2D_cyadu")
 [node name="Exit2" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="2" unique_id=1794509154 instance=ExtResource("2_4dpyx")]
 position = Vector2(-1443, 1188)
 exit_id = 1
-level_id_to_exit_to = 0
+level_id_to_exit_to = 1000
 spawn_id_to_exit_to = 3
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit2" index="0" unique_id=1310476195]
