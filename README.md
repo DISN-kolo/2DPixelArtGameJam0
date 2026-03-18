@@ -2,6 +2,7 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
+- better blockout textures ?
 - fix varied jump height per performance (maybe it's only an issue with x1/n of godot's preview player? or maybe i missed a delta actually.)
 - maybe: try moving only the collbox here and ther upon the infamous corner bug
 - Saves :)
