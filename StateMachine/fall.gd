@@ -40,14 +40,14 @@ func process_physics(delta: float) -> State:
 	
 	# holy shit.
 	if (actor.is_on_floor()):
-		if (actor.is_on_wall() && !actor.custom_is_on_floor()):
-			print("detected that i'm on floor, from fall, while also on wall and not on floor.");
-			print("this is THE bug");
-			for i in actor.get_slide_collision_count():
-				var collision = actor.get_slide_collision(i);
-				if (abs(collision.get_normal().x) > 0.1):
-					actor.global_position += collision.get_normal()*delta*100;
-			return null;
+		#if (actor.is_on_wall() && !actor.custom_is_on_floor()):
+			#print("detected that i'm on floor, from fall, while also on wall and not on floor.");
+			#print("this is THE bug");
+			#for i in actor.get_slide_collision_count():
+				#var collision = actor.get_slide_collision(i);
+				#if (abs(collision.get_normal().x) > 0.1):
+					#actor.global_position += collision.get_normal()*delta*100;
+			#return null;
 		print("detected that i'm on floor, from fall");
 		if (Input.is_action_pressed("jump")):
 			PlayerMetrics.aux_jumps_left = PlayerMetrics.max_aux_jumps;

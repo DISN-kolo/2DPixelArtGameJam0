@@ -4,7 +4,6 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 # TODO
 - better blockout textures ?
 - fix varied jump height per performance (maybe it's only an issue with x1/n of godot's preview player? or maybe i missed a delta actually.)
-- maybe: try moving only the collbox here and ther upon the infamous corner bug
 - Saves :)
 	- Completed rooms, accessible rooms, inaccessible barriers in rooms...
 - Character animations
@@ -21,8 +20,8 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 - Primitive killzone + respawn implementation. Uses a "frame buffer" that is prety wacky but works.
 - Camera border setting by two handles from the base level
 - Multilayer tilesets to support one-way and normal collisions at once.
-- Fixed a weird bug with an accidental wallslide when you fall through with crouching while against the wall. This is maybe not a very good fix. This bug seems to be engine-side.
-- camera inertia and lookahea. but it's commented out.
+- Fixed a weird bug with an accidental wallslide when you fall through with crouching while against the wall (disabled 'block on wall'). This bug seems to be engine-side.
+- camera inertia and lookahead. but it's commented out for the moment cause it's a bit nauseating
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape

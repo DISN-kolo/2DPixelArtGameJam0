@@ -1,6 +1,10 @@
 extends Node
 
 @export_file("*.tscn") var default_level_path : String = "";
+@export_file("*.tscn") var default_debug_level_path : String = "";
+
+@export var debug_level_tick: bool = false;
+
 var default_level : Node2D;
 var loaded_level : Node2D;
 
@@ -34,6 +38,8 @@ func _ready() -> void:
 	Signals.connect("unload_level", unload_level);
 	Signals.connect("load_player", load_player);
 	Signals.connect("unload_player", unload_player);
-
-	load_level(default_level_path);
+	if (debug_level_tick):
+		load_level(default_debug_level_path);
+	else:
+		load_level(default_level_path);
 	load_player(0);
