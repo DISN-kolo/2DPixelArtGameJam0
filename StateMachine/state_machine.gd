@@ -15,13 +15,13 @@ func init(actor: CharacterBody2D) -> void:
 
 func change_state(new_state: State) -> void:
 	if (current_state):
-		print("LEAVING ", current_state.get_name());
+		#print("LEAVING ", current_state.get_name());
 		current_state.exit();
 	if (new_state == null):
 		return ;
 	state_changed.emit(new_state.get_name());
 	current_state = new_state;
-	print("ENTERING ", current_state.get_name());
+	#print("ENTERING ", current_state.get_name());
 	new_state.enter();
 
 func process_input(event: InputEvent) -> void:

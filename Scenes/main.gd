@@ -29,6 +29,12 @@ func load_player(spawn_number: int) -> void:
 	pc.set_cam_zoom(loaded_level.cam_zoom);
 	PlayerMetrics.last_global_pos = pc.position;
 	add_child(pc);
+	var lvl_id: int = loaded_level.level_id;
+	if (!PlayerMetrics.visited_level_ids.has(lvl_id)):
+		PlayerMetrics.visited_level_ids.append(lvl_id);
+	PlayerMetrics.last_level_id = lvl_id;
+	PlayerMetrics.last_spawn_id = spawn_number;
+	Signals.level_loaded.emit();
 
 func unload_player() -> void:
 	pc.queue_free();

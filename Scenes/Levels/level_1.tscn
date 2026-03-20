@@ -13,6 +13,7 @@ size = Vector2(49, 320)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3mqfk"]
 
 [node name="Level1" unique_id=1990827985 instance=ExtResource("1_tlcug")]
+level_id = 1
 cam_zoom = 1.0
 
 [node name="PortalDecor" parent="TileControl" parent_id_path=PackedInt32Array(1290145722) index="3" unique_id=784182486]
