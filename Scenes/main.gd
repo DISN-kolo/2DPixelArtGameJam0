@@ -39,7 +39,13 @@ func load_player(spawn_number: int) -> void:
 func unload_player() -> void:
 	pc.queue_free();
 
+func spawn_main_menu() -> void:
+
 func _ready() -> void:
+	# TODO load a menu!
+	# TODO to load a menu, you must have a menu.
+	if (PlayerMetrics.has_save()):
+		
 	Signals.connect("load_level", load_level);
 	Signals.connect("unload_level", unload_level);
 	Signals.connect("load_player", load_player);
