@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://bpfg4053vmxo5"]
 
 [ext_resource type="Script" uid="uid://8viev1p7gegt" path="res://Scenes/main.gd" id="1_8gbba"]
+[ext_resource type="Theme" uid="uid://crch0qiqs51px" path="res://Themes/debug_theme.tres" id="2_bo1nx"]
 
 [node name="Main" type="Node" unique_id=1493251341]
 script = ExtResource("1_8gbba")
 default_level_path = "uid://dk5i6k0dau54p"
 default_debug_level_path = "uid://dhb45iir3nrtd"
-debug_level_tick = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1227579412]
 
 [node name="MainControl" type="Control" parent="CanvasLayer" unique_id=1867590948]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,34 +19,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LabelState" type="Label" parent="CanvasLayer/MainControl" unique_id=526068104]
+[node name="DebugStuff" type="Control" parent="CanvasLayer/MainControl" unique_id=621710004]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_bo1nx")
+
+[node name="LabelState" type="Label" parent="CanvasLayer/MainControl/DebugStuff" unique_id=526068104]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "State"
 
-[node name="LabelCrouched" type="Label" parent="CanvasLayer/MainControl" unique_id=1416876815]
+[node name="LabelCrouched" type="Label" parent="CanvasLayer/MainControl/DebugStuff" unique_id=1416876815]
 unique_name_in_owner = true
 layout_mode = 0
 offset_top = 27.0
-offset_right = 40.0
+offset_right = 82.0
 offset_bottom = 50.0
 text = "Crouched?"
 
-[node name="LabelMisc" type="Label" parent="CanvasLayer/MainControl" unique_id=1920645885]
+[node name="LabelMisc" type="Label" parent="CanvasLayer/MainControl/DebugStuff" unique_id=1920645885]
 unique_name_in_owner = true
 layout_mode = 0
 offset_top = 49.0
-offset_right = 40.0
+offset_right = 55.0
 offset_bottom = 72.0
 text = "Coords"
 
-[node name="LabelJumpHeld" type="Label" parent="CanvasLayer/MainControl" unique_id=1826222222]
+[node name="LabelJumpHeld" type="Label" parent="CanvasLayer/MainControl/DebugStuff" unique_id=1826222222]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 261.0
 offset_top = 8.0
-offset_right = 318.0
+offset_right = 356.0
 offset_bottom = 31.0
 text = "JUMP HELD?"

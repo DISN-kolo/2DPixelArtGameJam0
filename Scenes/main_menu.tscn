@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dwyiri4mat0g8"]
+
+[ext_resource type="Theme" uid="uid://bs8m5sb7064ua" path="res://Themes/menu_theme.tres" id="1_28flt"]
+[ext_resource type="Script" uid="uid://bccndv44yltmc" path="res://Scenes/main_menu.gd" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://cnwlqllpbdymq" path="res://Scenes/MainMenuStuff/debug_button.gd" id="3_1ehe0"]
+[ext_resource type="Script" uid="uid://c4n0x1j2vgbmy" path="res://Scenes/MainMenuStuff/new_game_button.gd" id="4_ce3w2"]
+[ext_resource type="Script" uid="uid://b2ojmpqpr2y5d" path="res://Scenes/MainMenuStuff/kill_save_button.gd" id="4_n45e2"]
+[ext_resource type="Script" uid="uid://g5w0df71mh6j" path="res://Scenes/MainMenuStuff/continue_button.gd" id="5_opfnp"]
+
+[node name="MainMenu" type="Control" unique_id=210835864]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_28flt")
+script = ExtResource("2_48xlc")
+
+[node name="DebugVBox" type="VBoxContainer" parent="." unique_id=1611783379]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -34.0
+offset_right = 83.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DebugButton" type="Button" parent="DebugVBox" unique_id=472953714]
+unique_name_in_owner = true
+layout_mode = 2
+text = "debug gaming"
+alignment = 0
+script = ExtResource("3_1ehe0")
+
+[node name="KillSaveButton" type="Button" parent="DebugVBox" unique_id=120018222]
+unique_name_in_owner = true
+layout_mode = 2
+text = "kill the save"
+alignment = 0
+script = ExtResource("4_n45e2")
+
+[node name="MMSubCont" type="Control" parent="." unique_id=1252760392]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_right = 672.0
+grow_vertical = 2
+
+[node name="TitleName" type="Label" parent="MMSubCont" unique_id=2016329693]
+layout_mode = 1
+offset_top = 133.0
+offset_right = 447.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 46
+text = "The Glorpiest Quest"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MMSubCont" unique_id=444290602]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -384.0
+offset_right = 141.0
+offset_bottom = -224.0
+grow_vertical = 0
+alignment = 2
+
+[node name="ContinueButton" type="Button" parent="MMSubCont/VBoxContainer" unique_id=2059540535]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Continue"
+alignment = 0
+script = ExtResource("5_opfnp")
+
+[node name="NewGameButton" type="Button" parent="MMSubCont/VBoxContainer" unique_id=521384199]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Game"
+alignment = 0
+script = ExtResource("4_ce3w2")
+
+[node name="OptionsButton" type="Button" parent="MMSubCont/VBoxContainer" unique_id=1461570109]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options
+"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="MMSubCont/VBoxContainer" unique_id=320487018]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit
+"
+alignment = 0
+
+[connection signal="pressed" from="DebugVBox/KillSaveButton" to="DebugVBox/KillSaveButton" method="_on_pressed"]
+[connection signal="pressed" from="MMSubCont/VBoxContainer/ContinueButton" to="MMSubCont/VBoxContainer/ContinueButton" method="_on_pressed"]
+[connection signal="pressed" from="MMSubCont/VBoxContainer/NewGameButton" to="MMSubCont/VBoxContainer/NewGameButton" method="_on_pressed"]

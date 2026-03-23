@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://crch0qiqs51px"]
+
+[ext_resource type="FontFile" uid="uid://dho27affqmhp7" path="res://Themes/Fonts/JetBrainsMono/fonts/webfonts/JetBrainsMono-Regular.woff2" id="1_tkdtf"]
+
+[resource]
+default_font = ExtResource("1_tkdtf")
+default_font_size = 18

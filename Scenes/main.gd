@@ -5,10 +5,11 @@ extends Node
 
 @export var debug_level_tick: bool = false;
 
-var default_level : Node2D;
 var loaded_level : Node2D;
 
 @onready var pc_ps : PackedScene = preload("res://Character/pc.tscn");
+@onready var main_menu_ps : PackedScene = preload("res://Scenes/main_menu.tscn")
+
 var pc : CharacterBody2D;
 
 func load_level(level_path: String) -> void:
@@ -40,18 +41,16 @@ func unload_player() -> void:
 	pc.queue_free();
 
 func spawn_main_menu() -> void:
+	var main_menu_node: Control = main_menu_ps.instantiate();
+	%MainControl.add_child(main_menu_node);
 
 func _ready() -> void:
-	# TODO load a menu!
-	# TODO to load a menu, you must have a menu.
-	if (PlayerMetrics.has_save()):
-		
+	Settings.debuglevelpath = default_debug_level_path;
+	Settings.startlevelpath = default_level_path;
+	if (debug_level_tick):
+		Settings.debugmode = true;
+	spawn_main_menu();
 	Signals.connect("load_level", load_level);
 	Signals.connect("unload_level", unload_level);
 	Signals.connect("load_player", load_player);
 	Signals.connect("unload_player", unload_player);
-	if (debug_level_tick):
-		load_level(default_debug_level_path);
-	else:
-		load_level(default_level_path);
-	load_player(0);

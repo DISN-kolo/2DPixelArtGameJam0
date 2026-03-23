@@ -35,7 +35,7 @@ func load_save() -> void:
 	PlayerMetrics.last_level_id = int(data["last_level_id"]);
 	PlayerMetrics.last_spawn_id = int(data["last_spawn_id"]);
 	PlayerMetrics.recompute_stats();
-	print("save loaded!");
+	print("save (pre)loaded!");
 
 func has_save() -> bool:
 	return FileAccess.file_exists(SAVE_PATH);

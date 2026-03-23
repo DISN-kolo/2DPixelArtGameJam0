@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Bad ideas GJ 2026"
+config/name="Bad_ideas_GJ_2026s"
 run/main_scene="uid://bpfg4053vmxo5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
@@ -24,6 +24,12 @@ SceneSwitching="*uid://cuunkkctn8168"
 Enums="*uid://d23jnf1yqf40n"
 PlayerMetrics="*uid://dtth4sftg1s3"
 SaveManager="*uid://31s7lha4yfsm"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+window/size/initial_position_type=4
 
 [dotnet]
 
