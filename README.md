@@ -9,6 +9,7 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 - Intro act (big goal!)
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
 - leave the blockout esthetics? idfk
+- maybe instead not spawn the items at all (see 'queuefreed' in specs below)
 
 # Some specs
 - Jump speed allows for jumping horizontally over 9-ish tiles
@@ -21,6 +22,7 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 - Fixed a weird bug with an accidental wallslide when you fall through with crouching while against the wall (disabled 'block on wall'). This bug seems to be engine-side.
 - camera inertia and lookahead. but it's commented out for the moment cause it's a bit nauseating
 - (one slot) save load system, primitive main menu
+- if item is already in inventory it gets queuefreed after spawning.
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape
