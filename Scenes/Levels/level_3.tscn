@@ -47,7 +47,7 @@ debug_color = Color(0, 0.6970001, 0.82, 1)
 [node name="Exit2" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="2" unique_id=1302731631 instance=ExtResource("2_6tcp3")]
 position = Vector2(1809, -1472)
 exit_id = 2
-level_id_to_exit_to = 4
+level_id_to_exit_to = 6
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit2" index="0" unique_id=1310476195]
 position = Vector2(-195, -4)
@@ -60,6 +60,10 @@ position = Vector2(108, 32)
 
 [node name="Spawn1" type="Marker2D" parent="SpawnMarkers" parent_id_path=PackedInt32Array(1679915875) index="1" unique_id=646229813]
 position = Vector2(2130, 224)
+gizmo_extents = 289.7
+
+[node name="Spawn2" type="Marker2D" parent="SpawnMarkers" parent_id_path=PackedInt32Array(1679915875) index="2" unique_id=1880656177]
+position = Vector2(1622, -1248)
 gizmo_extents = 289.7
 
 [node name="TopLeft" parent="CamBoundaries" parent_id_path=PackedInt32Array(287068449) index="0" unique_id=1773139658]
