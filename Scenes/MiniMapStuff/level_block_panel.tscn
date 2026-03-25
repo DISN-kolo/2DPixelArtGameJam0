@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bi0g26bp763m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo1nx"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="LevelBlockPanel" type="Panel" unique_id=1854543281]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bo1nx")

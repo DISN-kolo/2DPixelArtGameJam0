@@ -5,7 +5,7 @@ var startlevelpath : String = "";
 var debuglevelpath : String = "";
 var cameramovement : bool = false;
 
-var minimap_scale: float = 16.0;
+var minimap_scale: float = 24.0;
 
 ## In a bizarre twist of fate, Y points downwards.
 var gravity : float = 40.0;

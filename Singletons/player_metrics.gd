@@ -5,6 +5,7 @@ var aux_jumps_left: int = 0;
 var max_aux_jumps: int = 0;
 var last_global_pos: Vector2 = Vector2(0, 0);
 var visited_level_ids: Array[int];
+var generated_panels_for_level_ids: Array[int];
 var last_level_id: int = 0;
 var last_spawn_id: int = 0;
 

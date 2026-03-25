@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cgo0m5l6xuq1i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ij2m4"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="LevelEntryPanel" type="Panel" unique_id=414709769]
+offset_right = 24.0
+offset_bottom = 24.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ij2m4")
