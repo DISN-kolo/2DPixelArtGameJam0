@@ -9,6 +9,16 @@ extends Panel
 func _ready() -> void:
 	Signals.level_loaded.connect(generate_panel_for_minimap);
 
+# TODO add panels to an array, add "spawn coordinates" to panels,
+# move around the levels based on which level you're in (center on the current level),
+# spawn loaded levels so that their used spawnpoint overlaps with
+# the corresponding exit's nearby spawnpoint in the previous level.
+# this will work because exits' ids match the ids of nearby spawns.
+# don't draw the spawn 0 of level 0.
+# don't forget to check if all ids match.
+# for every level, make the spawnpoit as close to camera boundry as possible,
+# or maybe even on it sometimes. thus, level exit areas should be outside of
+# the visible area...
 func generate_panel_for_minimap() -> void:
 	if (main.loaded_level.level_id in PlayerMetrics.generated_panels_for_level_ids):
 		return ;
