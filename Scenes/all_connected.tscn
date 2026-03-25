@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dkg0qdmgh14hk"]
+
+[ext_resource type="PackedScene" uid="uid://dk5i6k0dau54p" path="res://Scenes/Levels/level_0.tscn" id="1_wcvhr"]
+[ext_resource type="PackedScene" uid="uid://bll176tddc4b3" path="res://Scenes/Levels/level_1.tscn" id="2_ndyum"]
+[ext_resource type="PackedScene" uid="uid://boruajl814gw0" path="res://Scenes/Levels/level_2.tscn" id="3_7b4qc"]
+[ext_resource type="PackedScene" uid="uid://2pdnwnpmn1lw" path="res://Scenes/Levels/level_3.tscn" id="4_u17bx"]
+[ext_resource type="PackedScene" uid="uid://pid8xc5ijo12" path="res://Scenes/Levels/level_4.tscn" id="5_s5u6c"]
+[ext_resource type="PackedScene" uid="uid://e0xlm6v2pcip" path="res://Scenes/Levels/level_5.tscn" id="6_fajh7"]
+[ext_resource type="PackedScene" uid="uid://6ukbh8nq1ul8" path="res://Scenes/Levels/level_6.tscn" id="7_ov064"]
+[ext_resource type="PackedScene" uid="uid://bsw0tq4go7hm2" path="res://Scenes/Levels/level_7.tscn" id="8_2afcu"]
+[ext_resource type="PackedScene" uid="uid://wbxc5ydntb5s" path="res://Scenes/Levels/level_8.tscn" id="9_4881g"]
+
+[node name="AllConnected" type="Node2D" unique_id=43324381]
+
+[node name="Level0" parent="." unique_id=1990827985 instance=ExtResource("1_wcvhr")]
+position = Vector2(30, 349)
+
+[node name="Level1" parent="." unique_id=1662523479 instance=ExtResource("2_ndyum")]
+position = Vector2(2012, 418)
+
+[node name="Level2" parent="." unique_id=561123496 instance=ExtResource("3_7b4qc")]
+position = Vector2(4435, 148)
+
+[node name="Level3" parent="." unique_id=1011824142 instance=ExtResource("4_u17bx")]
+position = Vector2(6205, 1354)
+
+[node name="Level4" parent="." unique_id=964336228 instance=ExtResource("5_s5u6c")]
+position = Vector2(8718, 1544)
+
+[node name="Level5" parent="." unique_id=148797985 instance=ExtResource("6_fajh7")]
+position = Vector2(12870, 2060)
+
+[node name="Level6" parent="." unique_id=2005402140 instance=ExtResource("7_ov064")]
+position = Vector2(7745, -134)
+
+[node name="Level7" parent="." unique_id=386945327 instance=ExtResource("8_2afcu")]
+position = Vector2(9150, -3700)
+
+[node name="Level8" parent="." unique_id=386878945 instance=ExtResource("9_4881g")]
+position = Vector2(12634, -3967)

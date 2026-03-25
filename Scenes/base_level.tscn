@@ -700,6 +700,7 @@ unique_name_in_owner = true
 script = ExtResource("3_sur3v")
 
 [node name="SpawnMarkers" type="Node2D" parent="." unique_id=1679915875]
+unique_name_in_owner = true
 
 [node name="Spawn0" type="Marker2D" parent="SpawnMarkers" unique_id=777578760]
 gizmo_extents = 289.7

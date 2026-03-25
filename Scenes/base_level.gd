@@ -22,6 +22,12 @@ func get_cam_limits() -> Vector4i:
 		$CamBoundaries/BottomRight.position.y
 	);
 
+func get_spawns() -> Array[Vector2]:
+	var ret: Array[Vector2];
+	for node in %SpawnMarkers.get_children():
+		ret.append(node.position);
+	return ret;
+
 func _ready() -> void:
 	Signals.pickupable_picked_up.connect(spawn_disappearing_pu);
 	%ExitAreas.set_level_id_to_exits(level_id);

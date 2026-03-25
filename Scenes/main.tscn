@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://8viev1p7gegt" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="Theme" uid="uid://crch0qiqs51px" path="res://Themes/debug_theme.tres" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://bd5yn2d88a36v" path="res://Scenes/map_panel.gd" id="3_8gbba"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo1nx"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 
 [node name="Main" type="Node" unique_id=1493251341]
 script = ExtResource("1_8gbba")
@@ -57,3 +64,48 @@ offset_top = 8.0
 offset_right = 356.0
 offset_bottom = 31.0
 text = "JUMP HELD?"
+
+[node name="MapControl" type="Control" parent="CanvasLayer/MainControl" unique_id=1765848672]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapAnchor" type="Control" parent="CanvasLayer/MainControl/MapControl" unique_id=1522271711]
+layout_mode = 1
+anchor_left = 0.063
+anchor_top = 0.096
+anchor_right = 0.93700004
+anchor_bottom = 0.90400004
+offset_left = 0.19999695
+offset_top = -0.40000153
+offset_right = -0.20007324
+offset_bottom = 0.39996338
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MapPanel" type="Panel" parent="CanvasLayer/MainControl/MapControl/MapAnchor" unique_id=1416262482]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_8gbba")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/MainControl/MapControl/MapAnchor/MapPanel" unique_id=936791990]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bo1nx")
