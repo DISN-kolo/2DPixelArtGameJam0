@@ -22,6 +22,11 @@ func _ready() -> void:
 # maybe the map data should be stored in a singleton or something. we shan't render
 # it all the time, clearly, so we could store data in a singleton and re-render
 # the map every time we need to see it.
+# bonus thought: it shounldn't be THAT bad to just add docking nodes to the
+# levels. these nodes would have the info like during the exit:
+# 1. their own id 2. the id they want to connect to 3. the lvl id they want
+# to connect to. the id of the level that THEY have is already present from
+# main.loaded_level in generate_panel_for_minimap().
 func generate_panel_for_minimap() -> void:
 	if (main.loaded_level.level_id in PlayerMetrics.generated_panels_for_level_ids):
 		return ;
