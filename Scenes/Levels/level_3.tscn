@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d054hlguj5vtf" path="res://Scenes/base_level.tscn" id="1_us8ef"]
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="2_6tcp3"]
+[ext_resource type="PackedScene" uid="uid://cw8qg1lmr2kcm" path="res://Scenes/docker.tscn" id="3_nfly3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfly3"]
 size = Vector2(254, 207)
@@ -71,6 +72,21 @@ position = Vector2(-78, -1493)
 
 [node name="BottomRight" parent="CamBoundaries" parent_id_path=PackedInt32Array(287068449) index="1" unique_id=582301781]
 position = Vector2(2337, 1282)
+
+[node name="Docker" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="0" unique_id=1448137752]
+position = Vector2(-78, -32)
+connect_to_level_id = 2
+connect_to_docker_id = 1
+
+[node name="Docker2" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="1" unique_id=226015695 instance=ExtResource("3_nfly3")]
+position = Vector2(2337, 139)
+connect_to_level_id = 4
+docker_id = 1
+
+[node name="Docker3" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="2" unique_id=1178582499 instance=ExtResource("3_nfly3")]
+position = Vector2(1606, -1493)
+connect_to_level_id = 6
+docker_id = 2
 
 [editable path="ExitAreas/Exit0"]
 [editable path="ExitAreas/Exit1"]

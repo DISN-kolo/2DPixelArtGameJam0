@@ -58,6 +58,11 @@ position = Vector2(-124, -148)
 [node name="BottomRight" parent="CamBoundaries" parent_id_path=PackedInt32Array(287068449) index="1" unique_id=582301781]
 position = Vector2(3206, 2055)
 
+[node name="Docker" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="0" unique_id=1448137752]
+position = Vector2(-124, -33)
+connect_to_level_id = 7
+connect_to_docker_id = 1
+
 [editable path="ExitAreas/Exit0"]
 [editable path="ExitAreas/Exit1"]
 [editable path="Killzones/Killzone"]

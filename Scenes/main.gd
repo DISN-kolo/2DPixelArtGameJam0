@@ -1,11 +1,12 @@
 extends Node
+class_name MainNode;
 
 @export_file("*.tscn") var default_level_path : String = "";
 @export_file("*.tscn") var default_debug_level_path : String = "";
 
 @export var debug_level_tick: bool = false;
 
-var loaded_level : Node2D;
+var loaded_level : BaseLevel;
 
 @onready var pc_ps : PackedScene = preload("res://Character/pc.tscn");
 @onready var main_menu_ps : PackedScene = preload("res://Scenes/main_menu.tscn")

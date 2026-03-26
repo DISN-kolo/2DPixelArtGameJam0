@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cw8qg1lmr2kcm"]
+
+[ext_resource type="Script" uid="uid://dxh3hwlcm8o02" path="res://Scenes/docker.gd" id="1_gya41"]
+
+[node name="Docker" type="Marker2D" unique_id=1448137752]
+gizmo_extents = 3200.0
+script = ExtResource("1_gya41")

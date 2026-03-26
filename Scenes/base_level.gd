@@ -1,4 +1,5 @@
 extends Node2D
+class_name BaseLevel
 
 @export var level_id: int = 0;
 @export var cam_zoom: float = 0.8;
@@ -27,6 +28,13 @@ func get_spawns() -> Array[Vector2]:
 	for node in %SpawnMarkers.get_children():
 		ret.append(node.position);
 	return ret;
+
+func get_dockers() -> Array[Docker]:
+	var ret: Array[Docker];
+	for node in %DockingNodes.get_children():
+		ret.append(node);
+	return ret;
+
 
 func _ready() -> void:
 	Signals.pickupable_picked_up.connect(spawn_disappearing_pu);

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d054hlguj5vtf" path="res://Scenes/base_level.tscn" id="1_tlcug"]
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="2_4dpyx"]
+[ext_resource type="PackedScene" uid="uid://cw8qg1lmr2kcm" path="res://Scenes/docker.tscn" id="4_cyadu"]
 [ext_resource type="PackedScene" uid="uid://b0gg0b3vceq0u" path="res://Scenes/killzone.tscn" id="4_iixi8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mqfk"]
@@ -57,6 +58,14 @@ position = Vector2(-155, -861)
 
 [node name="BottomRight" parent="CamBoundaries" parent_id_path=PackedInt32Array(287068449) index="1" unique_id=582301781]
 position = Vector2(2325, 339)
+
+[node name="Docker" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="0" unique_id=1448137752]
+position = Vector2(-155, -160)
+
+[node name="Docker2" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="1" unique_id=94356370 instance=ExtResource("4_cyadu")]
+position = Vector2(2325, -292)
+connect_to_level_id = 2
+docker_id = 1
 
 [editable path="ExitAreas/Exit0"]
 [editable path="ExitAreas/Exit1"]

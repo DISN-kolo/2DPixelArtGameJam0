@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://3w4iupiaf1by" path="res://Assets/Tiles/mine/32tiles_16_by_16_walls.png" id="3_l7ey7"]
 [ext_resource type="Script" uid="uid://8e1d30qnwefs" path="res://Scenes/exit_areas.gd" id="3_sur3v"]
 [ext_resource type="Texture2D" uid="uid://bannucwh2jrho" path="res://Assets/Tiles/mine/32tiles_16_by_16_portals.png" id="5_sur3v"]
+[ext_resource type="PackedScene" uid="uid://cw8qg1lmr2kcm" path="res://Scenes/docker.tscn" id="8_ytws3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sur3v"]
 texture = ExtResource("2_0f2sa")
@@ -714,3 +715,8 @@ gizmo_extents = 200.0
 
 [node name="BottomRight" type="Marker2D" parent="CamBoundaries" unique_id=582301781]
 gizmo_extents = 200.0
+
+[node name="DockingNodes" type="Node2D" parent="." unique_id=955645697]
+unique_name_in_owner = true
+
+[node name="Docker" parent="DockingNodes" unique_id=1448137752 instance=ExtResource("8_ytws3")]
