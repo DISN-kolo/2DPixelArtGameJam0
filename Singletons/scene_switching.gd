@@ -1,5 +1,14 @@
 extends Node;
 
+var just_starting: Dictionary[String, bool] = {
+	"Normal": true,
+	"Crouch": true
+};
+var last_state: Dictionary[String, String] = {
+	"Normal": "Idle",
+	"Crouch": "Uncrouched"
+};
+
 func _ready() -> void:
 	Signals.connect("goto_from", _on_goto_from);
 

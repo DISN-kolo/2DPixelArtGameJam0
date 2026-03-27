@@ -46,6 +46,7 @@ script = ExtResource("4_slnoy")
 
 [node name="StateMachine" type="Node" parent="Controllers" unique_id=441424316 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("5_gh78r")
+type_of_state = "Normal"
 starting_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="Controllers/StateMachine" unique_id=980495928 node_paths=PackedStringArray("controllers", "pre_fall_state", "jump_state", "walk_state")]
@@ -86,6 +87,7 @@ fall_state = NodePath("../Fall")
 
 [node name="CrouchMachine" type="Node" parent="Controllers" unique_id=677930829 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("5_gh78r")
+type_of_state = "Crouch"
 starting_state = NodePath("Uncrouched")
 
 [node name="Crouched" type="Node" parent="Controllers/CrouchMachine" unique_id=1102528440 node_paths=PackedStringArray("controllers", "uncrouched_state")]
