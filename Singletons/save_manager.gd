@@ -6,7 +6,8 @@ func _ready() -> void:
 	Signals.level_loaded.connect(_on_level_loaded);
 
 func _on_level_loaded() -> void:
-	write_save();
+	if (!Settings.debugmode):
+		write_save();
 
 func write_save() -> void:
 	var data: Dictionary = {
@@ -31,7 +32,7 @@ func load_save() -> void:
 		PlayerMetrics.visited_level_ids.append(int(id));
 	PlayerMetrics.has_items.clear();
 	for item in data["has_items"]:
-		PlayerMetrics.has_items.append(item as Enums.PickupableID);
+		PlayerMetrics.has_items.append(item as Pickups.PickupableID);
 	PlayerMetrics.last_level_id = int(data["last_level_id"]);
 	PlayerMetrics.last_spawn_id = int(data["last_spawn_id"]);
 	PlayerMetrics.recompute_stats();

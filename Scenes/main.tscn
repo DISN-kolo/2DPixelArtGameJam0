@@ -7,7 +7,6 @@
 script = ExtResource("1_8gbba")
 default_level_path = "uid://dk5i6k0dau54p"
 default_debug_level_path = "uid://dhb45iir3nrtd"
-debug_level_tick = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1227579412]
 

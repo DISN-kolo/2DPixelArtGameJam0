@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bs8m5sb7064ua" path="res://Themes/menu_theme.tres" id="1_28flt"]
 [ext_resource type="Script" uid="uid://bccndv44yltmc" path="res://Scenes/MainMenuStuff/main_menu.gd" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://js2fkmwi4gbp" path="res://Scenes/MainMenuStuff/debug_button.gd" id="3_6ko4f"]
 [ext_resource type="Script" uid="uid://c4n0x1j2vgbmy" path="res://Scenes/MainMenuStuff/new_game_button.gd" id="4_ce3w2"]
 [ext_resource type="Script" uid="uid://b2ojmpqpr2y5d" path="res://Scenes/MainMenuStuff/kill_save_button.gd" id="4_n45e2"]
 [ext_resource type="Script" uid="uid://g5w0df71mh6j" path="res://Scenes/MainMenuStuff/continue_button.gd" id="5_opfnp"]
@@ -36,6 +37,7 @@ grow_vertical = 2
 layout_mode = 2
 text = "debug gaming"
 alignment = 0
+script = ExtResource("3_6ko4f")
 
 [node name="KillSaveButton" type="Button" parent="DebugVBox" unique_id=120018222]
 layout_mode = 2
@@ -99,6 +101,7 @@ text = "Quit
 alignment = 0
 script = ExtResource("6_bt4qr")
 
+[connection signal="pressed" from="DebugVBox/DebugButton" to="DebugVBox/DebugButton" method="_on_pressed"]
 [connection signal="pressed" from="DebugVBox/KillSaveButton" to="DebugVBox/KillSaveButton" method="_on_pressed"]
 [connection signal="pressed" from="MMSubCont/VBoxContainer/ContinueButton" to="MMSubCont/VBoxContainer/ContinueButton" method="_on_pressed"]
 [connection signal="pressed" from="MMSubCont/VBoxContainer/NewGameButton" to="MMSubCont/VBoxContainer/NewGameButton" method="_on_pressed"]

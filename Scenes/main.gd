@@ -68,7 +68,12 @@ func _ready() -> void:
 	Signals.connect("unload_level", unload_level);
 	Signals.connect("load_player", load_player);
 	Signals.connect("unload_player", unload_player);
+	Signals.connect("debug_gaming", load_debug_level_and_player);
 	MinimapStorage.generate();
 
 func quit_game() -> void:
 	get_tree().quit();
+
+func load_debug_level_and_player() -> void:
+	load_level(default_debug_level_path);
+	load_player(0);

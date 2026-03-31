@@ -6,6 +6,7 @@
 bg_color = Color(0.2627451, 0.2627451, 0.2627451, 0.41960785)
 
 [node name="MapPanel" type="Panel" unique_id=1423073733]
+clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

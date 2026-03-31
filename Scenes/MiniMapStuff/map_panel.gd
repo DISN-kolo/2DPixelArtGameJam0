@@ -24,6 +24,12 @@ func draw_minimap() -> void:
 		level_panel.size = MinimapStorage.level_sizes[id];
 		if (id == PlayerMetrics.last_level_id):
 			current_pos = level_panel.position + level_panel.size/2;
+			level_panel.modulate = Color(0.4, 1, 0.4);
+			level_panel.z_index = 10;
+		if (!(id in PlayerMetrics.visited_level_ids)):
+			level_panel.visible = false;
+		else:
+			level_panel.visible = true;
 		%MoverOfMap.add_child(level_panel);
 		for j: int in range(MinimapStorage.mm_docker_pos_s[id].size()):
 			var entry_panel: Panel = level_entry_ps.instantiate();

@@ -9,7 +9,7 @@ var disappearing_dude : Node2D;
 func get_spawn_loc(spawn_id: int) -> Vector2:
 	return get_node("SpawnMarkers/Spawn%d" % [spawn_id]).position;
 
-func spawn_disappearing_pu(pickup_id : Enums.PickupableID, gpos : Vector2) -> void:
+func spawn_disappearing_pu(pickup_id : Pickups.PickupableID, gpos : Vector2) -> void:
 	disappearing_dude = disappearing_dude_ps.instantiate();
 	disappearing_dude.pickup_id = pickup_id;
 	disappearing_dude.global_position = gpos;
