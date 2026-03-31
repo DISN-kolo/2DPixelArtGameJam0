@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d054hlguj5vtf" path="res://Scenes/base_level.tscn" id="1_y8ppt"]
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="2_2iktx"]
+[ext_resource type="PackedScene" uid="uid://dk4d21iacud52" path="res://PickUp/pick_up_able.tscn" id="3_ic72l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2iktx"]
 size = Vector2(43, 320)
@@ -38,5 +39,9 @@ position = Vector2(1888, 228)
 [node name="Docker" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="0" unique_id=1448137752]
 position = Vector2(1888, -96)
 connect_to_level_id = 1
+
+[node name="PickUpAble" parent="." index="6" unique_id=843517446 instance=ExtResource("3_ic72l")]
+position = Vector2(1580, -28)
+pickup_id = 2
 
 [editable path="ExitAreas/Exit0"]

@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://hne62tnrt5nl"]
 
 [ext_resource type="Theme" uid="uid://bs8m5sb7064ua" path="res://Themes/menu_theme.tres" id="1_yp6um"]
-[ext_resource type="Script" uid="uid://bccndv44yltmc" path="res://Scenes/MainMenuStuff/main_menu.gd" id="2_eogms"]
-[ext_resource type="Script" uid="uid://g5w0df71mh6j" path="res://Scenes/MainMenuStuff/continue_button.gd" id="5_5ipwt"]
-[ext_resource type="Script" uid="uid://d16suxofmhicc" path="res://Scenes/MainMenuStuff/quit_button.gd" id="7_e6bg0"]
+[ext_resource type="Script" uid="uid://33a1a8mky01q" path="res://Scenes/IngameMenuStuff/ingame_menu.gd" id="2_my68k"]
+[ext_resource type="Script" uid="uid://8yo1nsaf2lx1" path="res://Scenes/IngameMenuStuff/continue_button.gd" id="3_u0838"]
+[ext_resource type="Script" uid="uid://dgpiryipkfta4" path="res://Scenes/IngameMenuStuff/options_button.gd" id="4_ixydp"]
+[ext_resource type="Script" uid="uid://bju2hqnitiap" path="res://Scenes/IngameMenuStuff/quit_button.gd" id="5_gm22n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my68k"]
+bg_color = Color(0.53, 0.53, 0.53, 0.3254902)
 
 [node name="IngameMenu" type="Control" unique_id=210835864]
 layout_mode = 3
@@ -13,7 +17,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_yp6um")
-script = ExtResource("2_eogms")
+script = ExtResource("2_my68k")
+
+[node name="IMPanel" type="Panel" parent="." unique_id=950514674]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_my68k")
 
 [node name="IMSubCont" type="Control" parent="." unique_id=1252760392]
 layout_mode = 1
@@ -47,7 +60,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Continue"
 alignment = 0
-script = ExtResource("5_5ipwt")
+script = ExtResource("3_u0838")
 
 [node name="OptionsButton" type="Button" parent="IMSubCont/VBoxContainer" unique_id=1461570109]
 unique_name_in_owner = true
@@ -55,6 +68,7 @@ layout_mode = 2
 text = "Options
 "
 alignment = 0
+script = ExtResource("4_ixydp")
 
 [node name="QuitButton" type="Button" parent="IMSubCont/VBoxContainer" unique_id=320487018]
 unique_name_in_owner = true
@@ -62,4 +76,17 @@ layout_mode = 2
 text = "Quit
 "
 alignment = 0
-script = ExtResource("7_e6bg0")
+script = ExtResource("5_gm22n")
+
+[node name="QuitConfirmHandler" type="Control" parent="." unique_id=1778321668]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="IMSubCont/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="IMSubCont/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

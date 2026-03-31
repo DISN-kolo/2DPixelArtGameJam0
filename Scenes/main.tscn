@@ -7,7 +7,6 @@
 script = ExtResource("1_8gbba")
 default_level_path = "uid://dk5i6k0dau54p"
 default_debug_level_path = "uid://dhb45iir3nrtd"
-debug_level_tick = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1227579412]
 
@@ -78,5 +77,14 @@ offset_left = 0.19999695
 offset_top = -0.40000153
 offset_right = -0.20007324
 offset_bottom = 0.39996338
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IngameMenuControl" type="Control" parent="CanvasLayer/MainControl" unique_id=413438660]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2

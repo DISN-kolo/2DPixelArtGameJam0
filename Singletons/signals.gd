@@ -15,4 +15,5 @@ signal killzone_entered;
 
 signal level_loaded;
 
+signal load_menu;
 signal quit_game;

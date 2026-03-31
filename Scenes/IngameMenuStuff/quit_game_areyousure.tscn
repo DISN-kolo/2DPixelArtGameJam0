@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bpfkxigm02noo"]
+
+[ext_resource type="Theme" uid="uid://bs8m5sb7064ua" path="res://Themes/menu_theme.tres" id="1_sdo34"]
+[ext_resource type="Script" uid="uid://v1jiywc1yesi" path="res://Scenes/IngameMenuStuff/quit_game_areyousure.gd" id="2_sdo34"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0k3e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_opfnp"]
+font_size = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+
+[node name="InvisibleFill" type="Panel" unique_id=1649265727]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sdo34")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p0k3e")
+script = ExtResource("2_sdo34")
+
+[node name="QuitGameFr" type="Panel" parent="." unique_id=1767277465]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -70.0
+offset_right = 215.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QGVBox" type="VBoxContainer" parent="QuitGameFr" unique_id=116597689]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -16.0
+offset_right = 39.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QGLabel" type="Label" parent="QuitGameFr/QGVBox" unique_id=97443529]
+layout_mode = 2
+text = "Quit to menu?"
+label_settings = SubResource("LabelSettings_opfnp")
+horizontal_alignment = 1
+
+[node name="QGHBox" type="HBoxContainer" parent="QuitGameFr/QGVBox" unique_id=350599272]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="YesQuitButton" type="Button" parent="QuitGameFr/QGVBox/QGHBox" unique_id=532537592]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Yes"
+
+[node name="QGVSep" type="VSeparator" parent="QuitGameFr/QGVBox/QGHBox" unique_id=424608643]
+custom_minimum_size = Vector2(181.16, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_opfnp")
+
+[node name="NoQuitButton" type="Button" parent="QuitGameFr/QGVBox/QGHBox" unique_id=1942363703]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "No"
+
+[connection signal="pressed" from="QuitGameFr/QGVBox/QGHBox/YesQuitButton" to="." method="_on_yes_quit_button_pressed"]
+[connection signal="pressed" from="QuitGameFr/QGVBox/QGHBox/NoQuitButton" to="." method="_on_no_quit_button_pressed"]

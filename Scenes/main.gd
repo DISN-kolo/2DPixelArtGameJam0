@@ -1,6 +1,8 @@
 extends Node
 class_name MainNode;
 
+var in_menu: bool = true;
+
 @export_file("*.tscn") var default_level_path : String = "";
 @export_file("*.tscn") var default_debug_level_path : String = "";
 
@@ -9,8 +11,8 @@ class_name MainNode;
 var loaded_level : BaseLevel;
 
 @onready var pc_ps : PackedScene = preload("res://Character/pc.tscn");
-@onready var main_menu_ps : PackedScene = preload("res://Scenes/MainMenuStuff/main_menu.tscn")
-
+@onready var main_menu_ps : PackedScene = preload("res://Scenes/MainMenuStuff/main_menu.tscn");
+@onready var ingame_menu_ps : PackedScene = preload("res://Scenes/IngameMenuStuff/ingame_menu.tscn");
 var ingame_menu_node : Control;
 
 var pc : CharacterBody2D;
@@ -47,6 +49,7 @@ func unload_player() -> void:
 	pc.queue_free();
 
 func spawn_main_menu() -> void:
+	in_menu = true;
 	var main_menu_node: Control = main_menu_ps.instantiate();
 	%MainControl.add_child(main_menu_node);
 
@@ -56,10 +59,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			if (%MapAnchor.get_children().is_empty()):
 				map_node = map_ps.instantiate();
 				%MapAnchor.add_child(map_node);
-	if (event.is_action_pressed("esc")):
-		if (%MapAnchor.get_children().is_empty()):
+	if (event.is_action_pressed("esc") && !in_menu):
+		if (%MapAnchor.get_children().is_empty() && %IngameMenuControl.get_children().is_empty()):
 			ingame_menu_node = ingame_menu_ps.instantiate();
-			%MainControl.add_child(ingame_menu_node);
+			%IngameMenuControl.add_child(ingame_menu_node);
 
 func _ready() -> void:
 	Signals.connect("quit_game", quit_game);
@@ -76,6 +79,8 @@ func _ready() -> void:
 	Signals.connect("load_player", load_player);
 	Signals.connect("unload_player", unload_player);
 	Signals.connect("debug_gaming", load_debug_level_and_player);
+	Signals.connect("load_menu", spawn_main_menu);
+	Signals.connect("level_loaded", on_level_loaded);
 	MinimapStorage.generate();
 
 func quit_game() -> void:
@@ -84,3 +89,6 @@ func quit_game() -> void:
 func load_debug_level_and_player() -> void:
 	load_level(default_debug_level_path);
 	load_player(0);
+
+func on_level_loaded() -> void:
+	in_menu = false;

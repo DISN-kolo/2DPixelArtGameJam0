@@ -39,6 +39,7 @@ position = Vector2(2065, 1634)
 
 [node name="PickUpAble" parent="." index="5" unique_id=843517446 instance=ExtResource("3_arbu7")]
 position = Vector2(1022, 1224)
+pickup_id = 0
 
 [node name="Docker" parent="DockingNodes" parent_id_path=PackedInt32Array(955645697) index="0" unique_id=1448137752]
 position = Vector2(-110, -20)
