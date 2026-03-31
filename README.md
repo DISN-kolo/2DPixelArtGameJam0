@@ -17,6 +17,7 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 - Esc menu! To quit or not to quit? With game pause!
 
 # TODO
+- force enable minimap via debug
 - options menu?
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
 - maybe instead not spawn the items at all (see 'queuefreed' in specs below)
