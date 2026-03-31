@@ -13,3 +13,5 @@ signal pickupable_picked_up;
 signal killzone_entered;
 
 signal level_loaded;
+
+signal quit_game;

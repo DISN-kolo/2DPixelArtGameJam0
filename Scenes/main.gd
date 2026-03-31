@@ -13,6 +13,9 @@ var loaded_level : BaseLevel;
 
 var pc : CharacterBody2D;
 
+@onready var map_ps : PackedScene = preload("res://Scenes/MiniMapStuff/map_panel.tscn");
+var map_node: Panel;
+
 func load_level(level_path: String) -> void:
 	loaded_level = load(level_path).instantiate();
 	add_child(loaded_level);
@@ -45,7 +48,14 @@ func spawn_main_menu() -> void:
 	var main_menu_node: Control = main_menu_ps.instantiate();
 	%MainControl.add_child(main_menu_node);
 
+func _unhandled_input(event: InputEvent) -> void:
+	if (event.is_action_pressed("minimap")):
+		if (%MapAnchor.get_children().is_empty()):
+			map_node = map_ps.instantiate();
+			%MapAnchor.add_child(map_node);
+
 func _ready() -> void:
+	Signals.connect("quit_game", quit_game);
 	Settings.debuglevelpath = default_debug_level_path;
 	Settings.startlevelpath = default_level_path;
 	if (debug_level_tick):
@@ -58,3 +68,7 @@ func _ready() -> void:
 	Signals.connect("unload_level", unload_level);
 	Signals.connect("load_player", load_player);
 	Signals.connect("unload_player", unload_player);
+	MinimapStorage.generate();
+
+func quit_game() -> void:
+	get_tree().quit();

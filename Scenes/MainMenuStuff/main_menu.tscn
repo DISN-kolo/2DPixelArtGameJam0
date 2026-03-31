@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c4n0x1j2vgbmy" path="res://Scenes/MainMenuStuff/new_game_button.gd" id="4_ce3w2"]
 [ext_resource type="Script" uid="uid://b2ojmpqpr2y5d" path="res://Scenes/MainMenuStuff/kill_save_button.gd" id="4_n45e2"]
 [ext_resource type="Script" uid="uid://g5w0df71mh6j" path="res://Scenes/MainMenuStuff/continue_button.gd" id="5_opfnp"]
+[ext_resource type="Script" uid="uid://d16suxofmhicc" path="res://Scenes/MainMenuStuff/quit_button.gd" id="6_bt4qr"]
 
 [node name="MainMenu" type="Control" unique_id=210835864]
 layout_mode = 3
@@ -96,7 +97,9 @@ layout_mode = 2
 text = "Quit
 "
 alignment = 0
+script = ExtResource("6_bt4qr")
 
 [connection signal="pressed" from="DebugVBox/KillSaveButton" to="DebugVBox/KillSaveButton" method="_on_pressed"]
 [connection signal="pressed" from="MMSubCont/VBoxContainer/ContinueButton" to="MMSubCont/VBoxContainer/ContinueButton" method="_on_pressed"]
 [connection signal="pressed" from="MMSubCont/VBoxContainer/NewGameButton" to="MMSubCont/VBoxContainer/NewGameButton" method="_on_pressed"]
+[connection signal="pressed" from="MMSubCont/VBoxContainer/QuitButton" to="MMSubCont/VBoxContainer/QuitButton" method="_on_pressed"]
